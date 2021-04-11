@@ -15,6 +15,7 @@ import StudentUI from './components/Student/StudentUI'
 import TeacherUI from './components/Teacher/TeacherUI'
 import StudentSigUp from './components/StudentSigUp';
 import TeacherSignup from './components/TeacherSignUp'
+import Welcome from './components/Welcome';
 
 
 
@@ -26,7 +27,7 @@ function App() {
 
 <Switch>
 
-<Route exact path='/' component={StudentSigUp}></Route>
+<Route exact path='/' component={Welcome}></Route>
 <Route path='/signup' component={StudentSigUp}></Route>
 <Route path='/signupteach' component={TeacherSignup}></Route>
 <Route path='/login' component={Login}></Route>

@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import Navbar from '../Navbar'
 import StudentTable from './StudentTable'
-import StudentEvaluation from './StudentEvaluation'
+import Evaluation from './Evaluation'
 import AddForm from './AddForm'
 const StudentUI = () => {
 const [displayForm, setdisplayForm] = useState(false)
@@ -35,6 +35,8 @@ const [displayForm, setdisplayForm] = useState(false)
     const toggler=(e)=>{
         setdisplayForm(!displayForm)
     }
+
+    let result=0
     return (
         <div>
             <Navbar/>
@@ -48,7 +50,7 @@ const [displayForm, setdisplayForm] = useState(false)
             {displayForm&&<AddForm onAdd={addNewSubject}/>}
 
             <StudentTable subject={subject} add={toggler} showAdd={displayForm} />
-            <StudentEvaluation/>
+            <Evaluation result={result}/>
         </div>
     )
 
