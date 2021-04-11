@@ -5,7 +5,7 @@ const Login = () => {
 
       <div >
         <Navbar />
-<h1
+    <h1
       style={{
         textAlign: 'center',
         
