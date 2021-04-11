@@ -26,7 +26,7 @@ function App() {
 
 <Switch>
 
-<Route exact path='/' component={StudentSigUp}></Route>
+<Route exact path='/' component={Login}></Route>
 <Route path='/signup' component={StudentSigUp}></Route>
 <Route path='/signupteach' component={TeacherSignup}></Route>
 <Route path='/login' component={Login}></Route>
