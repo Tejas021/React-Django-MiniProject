@@ -1,29 +1,29 @@
-import {useEffect,useState} from 'react'
-import { PieChart } from 'react-minimal-pie-chart';
-const SortedTable = () => {
+// import {useEffect,useState} from 'react'
+ 
+const SortedTable = ({sortList}) => {
 
 
    
 
 
-    const [sortList, setsortList] = useState([])
+    // const [sortList, setsortList] = useState([])
 
 
-    useEffect(() => {
-        const fetchSorted=async()=>{
-            const sorted= await getSortList()
-            setsortList(sorted)
-        }
+    // useEffect(() => {
+    //     const fetchSorted=async()=>{
+    //         const sorted= await getSortList()
+    //         setsortList(sorted)
+    //     }
        
-        fetchSorted()
+    //     fetchSorted()
        
-    }, [])
+    // }, [])
 
 
-    const getSortList= async()=>{
-        const sortlist= fetch('http://localhost:8000/api/sort').then((res)=>res.json())
-        return sortlist
-    }
+    // const getSortList= async()=>{
+    //     const sortlist= fetch('http://localhost:8000/api/sort').then((res)=>res.json())
+    //     return sortlist
+    // }
 
 return (
 <div >

@@ -25,3 +25,27 @@ class StudentData(APIView):
                     fast.append(i.student_roll)
         data = {'fast': fast, 'med': med, 'slow': slow}
         return JsonResponse(data, status=status.HTTP_200_OK)
+
+
+class StudentTables(APIView):
+    serializer_class = StudentTableSerializer
+    lookup_url_kwarg = 'owner'
+
+    def get(self, request, format=None):
+        owner = request.GET.get(self.lookup_url_kwarg)
+        print(owner)
+        data = StudentTable.objects.filter(owner=owner)
+        data1 = StudentTableSerializer(data[0]).data
+        print(list(data))
+        return Response(data1, status=status.HTTP_200_OK)
+
+
+class TeacherTables(APIView):
+    serializer_class = TeacherTableSerializer
+    lookup_url_kwargs = 'owner'
+
+    def get(self, request, format=None):
+        owner = request.GET.get(self.lookup_url_kwargs)
+        data = TeacherTable.objects.filter(owner=owner)
+        data1 = TeacherTableSerializer(data[0]).data
+        return Response(data1, status=status.HTTP_200_OK)

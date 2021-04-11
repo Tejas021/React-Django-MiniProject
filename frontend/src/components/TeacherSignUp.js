@@ -18,7 +18,7 @@ const TeacherSignUp = () => {
             <p className='text-light'>By creating an account you agree to our <a href="/"
             style={{color:"dodgerblue"}}>Terms & Privacy</a></p>
             <div>
-            <button type="submit" className="signup" className='button'>Sign Up</button>
+            <button type="submit" className=' signup button'>Sign Up</button>
             </div>
             </div>
             </form>

@@ -7,6 +7,7 @@ import {useState,useEffect} from 'react'
 const TeacherUI = () => {
   const [displayForm, setdisplayForm] = useState(false)
   const [student, setStudent] = useState([])
+  const [sortList, setsortList] = useState([])
 
   useEffect(() => {
       const getMarks = async () => {
@@ -14,12 +15,27 @@ const TeacherUI = () => {
         setStudent(tasksFromServer)
       }
       getMarks()
+
+      const fetchSorted=async()=>{
+        const sorted= await getSortList()
+        setsortList(sorted)
+    }
+      fetchSorted()
+
     }, [])
 
     const fetchStudents = async () => {
       const data = await fetch('http://localhost:8000/api/teachertable/').then((res)=>res.json())
       return data
     }
+
+    
+    const getSortList= async()=>{
+      const sortlist= fetch('http://localhost:8000/api/sort').then((res)=>res.json())
+      return sortlist
+  }
+
+
 
 const addFormThere=()=>{setdisplayForm(!displayForm)}
 
@@ -33,6 +49,11 @@ const addStudent=async (newstudent)=>{
   const data = await res.json()
   console.log(student)
   setStudent([...student,data])
+  const fetchSorted=async()=>{
+    const sorted= await getSortList()
+    setsortList(sorted)
+}
+  fetchSorted()
 }
 
  
@@ -50,7 +71,7 @@ const addStudent=async (newstudent)=>{
     
       <TeacherTable marks={student} renderForm={addFormThere} addForm={displayForm}/>
 
-      <SortedTable/>
+      <SortedTable sortList={sortList}/>
     </div>
   );
 };

@@ -14,11 +14,11 @@ const StudentSigUp = () => {
             <div><input type="password" placeholder="Enter Password" name="password" required className='input'/></div>
             <div><input type="password" placeholder="Repeat Password" name="repeatPassword"
             required className='input'/></div>
-    
-            <p>By creating an account you agree to our <a href="/"
+     
+            <p className="text-light">By creating an account you agree to our <a href="/"
             style={{color:"dodgerblue"}}>Terms & Privacy</a></p>
             <div>
-            <button type="submit" className="signup" className='button'>Sign Up</button>
+            <button type="submit"  className=' signup button'>Sign Up</button>
             </div>
             </div>
             </form>
