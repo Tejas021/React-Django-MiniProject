@@ -35,7 +35,7 @@ const TeacherUI = () => {
 
     
     const getSortList= async()=>{
-      const sortlist= fetch('http://localhost:8000/api/sort').then((res)=>res.json())
+      const sortlist= fetch('http://localhost:8000/api/sort?owner='+localStorage.getItem('id')).then((res)=>res.json())
       return sortlist
   }
 

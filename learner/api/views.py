@@ -43,9 +43,11 @@ class UserList(APIView):
 
 class StudentData(APIView):
     permission_classes = (permissions.AllowAny,)
+    lookup_url_kwarg = 'owner'
 
     def get(self, request, format=None):
-        sort = TeacherTable.objects.all()
+        owner = request.GET.get(self.lookup_url_kwarg)
+        sort = TeacherTable.objects.filter(owner=owner)
         fast = []
         slow = []
         med = []
