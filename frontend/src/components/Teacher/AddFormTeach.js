@@ -8,6 +8,7 @@ const [endsem, setendsem] = useState([])
 const [student_roll, setstudent_roll] = useState([])
 const [student_name, setstudent_name] = useState([])  
 
+let owner=localStorage.getItem('id')
 const onSubmit = (e) => {
   e.preventDefault()
 
@@ -15,7 +16,7 @@ const onSubmit = (e) => {
     alert('Please add a marks')
     return
   }
-onAdd({student_name,student_roll,ia1,ia2,termwork,endsem})
+onAdd({student_name,student_roll,ia1,ia2,termwork,endsem,owner})
 setia1('')
 setia2('')
 settermwork('')

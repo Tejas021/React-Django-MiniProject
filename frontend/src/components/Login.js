@@ -1,10 +1,32 @@
 import React from 'react'
-import Navbar from './Navbar'
-const Login = () => {
+import PropTypes from 'prop-types';
+
+import {useState} from 'react'
+const Login = ({handle_login,setrole}) => {
+
+const [username, setusername] = useState([])
+const [password, setpassword] = useState([])
+
+const Teachersubmitter=(e)=>{
+  e.preventDefault();
+  console.log({'username':username,'password':password})
+  handle_login(e,{'username':username,'password':password})
+  setrole('teacher')
+
+}
+
+const Studentsubmitter=(e)=>{
+  e.preventDefault();
+  console.log({'username':username,'password':password})
+  handle_login(e,{'username':username,'password':password})
+  setrole('student')
+
+}
+
     return (
 
       <div >
-        <Navbar />
+        
 <h1
       style={{
         textAlign: 'center',
@@ -21,15 +43,16 @@ const Login = () => {
         <div className="row">
           <div className="col-md-6 login-form-1">
             <h3>Teachers</h3>
-            <form method="post" action="loginTeacher">
+            <form onSubmit={Teachersubmitter}>
           
               <div className="form-group my-2">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Your Email *"
+                  placeholder="Username"
                   id="username"
                   name="username"
+                  onChange={(e) => setusername(e.target.value)}
                 />
               </div>
               <div className="form-group my-2">
@@ -39,6 +62,7 @@ const Login = () => {
                   placeholder="Your Password *"
                   id="password"
                   name="password"
+                  onChange={(e) => setpassword(e.target.value)}
                 />
               </div>
               <div className="form-group my-2">
@@ -48,21 +72,28 @@ const Login = () => {
                   value="Login"
                   id="submit1"
                 />
-              </div>
-              <div className="form-group my-2">
-                <a href="/" className="ForgetPwd">Forget Password?</a>
-              </div>
+              
+              </div> 
+               <div className="form-group my-2">
+                 <a href="/" className="ForgetPwd">Forget Password?</a> 
+             </div>
             </form>
           </div>
+
+
+
+
+         
           <div className="col-md-6 login-form-2 my-2">
             <h3>Students</h3>
-            <form>
+            <form onSubmit={Studentsubmitter}>
               <div className="form-group">
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Your Email *"
                   id="username2"
+                  onChange={(e) => setusername(e.target.value)}
                 />
               </div>
               <div className="form-group my-2" >
@@ -71,11 +102,12 @@ const Login = () => {
                   className="form-control"
                   placeholder="Your Password *"
                   id="password2"
+                  onChange={(e) => setpassword(e.target.value)}
                 />
               </div>
               <div className="form-group my-2">
                 <input
-                  type="button"
+                  type="submit"
                   className="btnSubmit"
                   value="Login"
                   id="submit2"
@@ -85,7 +117,7 @@ const Login = () => {
                 <a href="/" className="ForgetPwd" value="Login">Forget Password?</a>
               </div>
             </form>
-          </div>
+          </div> 
         </div>
       </div>
 
@@ -95,3 +127,6 @@ const Login = () => {
 }
 
 export default Login
+Login.propTypes = {
+  handle_login: PropTypes.func.isRequired
+};

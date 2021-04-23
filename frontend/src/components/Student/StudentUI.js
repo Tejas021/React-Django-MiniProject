@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
-import Navbar from '../Navbar'
+// import Navbar from '../Navbar'
+import LogNav from '../LogNav'
 import StudentTable from './StudentTable'
 import Evaluation from './Evaluation'
 import AddForm from './AddForm'
@@ -36,10 +37,10 @@ const [displayForm, setdisplayForm] = useState(false)
         setdisplayForm(!displayForm)
     }
 
-    let result=0
+    let result=2
     return (
         <div>
-            <Navbar/>
+            <LogNav/>
             <h1 className="Title" style={{textAlign:'left'}}>Welcome To StudEval</h1>
 
 <br/>

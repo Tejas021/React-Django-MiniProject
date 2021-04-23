@@ -1,15 +1,18 @@
 import React from "react";
-import Navbar from "../Navbar";
+// import Navbar from "../Navbar";
 import TeacherTable from "./TeacherTable";
 import SortedTable from './SortedTable'
 import AddForm from './AddFormTeach'
+import PieChart from './PieChart'
+import LogNav from '../LogNav'
 import {useState,useEffect} from 'react'
 const TeacherUI = () => {
   const [displayForm, setdisplayForm] = useState(false)
   const [student, setStudent] = useState([])
   const [sortList, setsortList] = useState([])
-
+ 
   useEffect(() => {
+    
       const getMarks = async () => {
         const tasksFromServer = await fetchStudents()
         setStudent(tasksFromServer)
@@ -25,7 +28,8 @@ const TeacherUI = () => {
     }, [])
 
     const fetchStudents = async () => {
-      const data = await fetch('http://localhost:8000/api/teachertable/').then((res)=>res.json())
+      
+      const data =await fetch('http://localhost:8000/api/teacher?owner='+localStorage.getItem('id')).then((res)=>res.json())
       return data
     }
 
@@ -60,7 +64,7 @@ const addStudent=async (newstudent)=>{
 
   return (
     <div>
-      <Navbar />
+      <LogNav/>
     
       <h1 className="Title" style={{textAlign:'left'}}>Welcome To StudEval</h1>
 
@@ -70,8 +74,9 @@ const addStudent=async (newstudent)=>{
       <br />
     
       <TeacherTable marks={student} renderForm={addFormThere} addForm={displayForm}/>
-
+{/* {console.log(owner)} */}
       <SortedTable sortList={sortList}/>
+      <PieChart sortList={sortList}/>
     </div>
   );
 };

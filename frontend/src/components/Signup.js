@@ -2,7 +2,7 @@ import React from 'react'
 import TeacherSignUp from './TeacherSignUp'
 import StudentSigUp from './StudentSigUp'
 import {useState} from 'react'
-const Signup = () => {
+const Signup = ({handle_signup,setrole}) => {
     const [toggler, settoggler] = useState(true)
     const [text,settext]=useState('SignUp as Student ?')
 
@@ -20,11 +20,11 @@ const Signup = () => {
         <div>
            
             
-            {(toggler)?<TeacherSignUp/>:<StudentSigUp/>}
+            {(toggler)?<TeacherSignUp handle_signup={handle_signup} setrole={setrole}/>:<StudentSigUp setrole={setrole} handle_signup={handle_signup}/>}
             
             {/* <TeacherSignUp/>
             <StudentSigUp/> */}
-             <button className='btn btn-outline-success mt-3' onClick={ChangeState}>{text}</button>
+             <button className='btn btn-outline-success mt-3' onClick={ChangeState} >{text}</button>
         </div>
     )
 }

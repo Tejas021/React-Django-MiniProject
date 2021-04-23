@@ -1,9 +1,27 @@
-// import {useEffect,useState} from 'react'
- 
+// // import {useEffect,useState} from 'react'
+// import {Pie, Doughnut} from 'react-chartjs-2';
 const SortedTable = ({sortList}) => {
 
 
-   
+    // const state1 = {
+    //     labels: ['Fast learner', 'Average learner', 'Slow learner'],
+    //     datasets: [
+    //       {
+    //         label: 'To find slow and fast lerner',
+    //         backgroundColor: [
+    //           '#B21F00',
+    //           '#C9DE00',
+    //           '#2FDE00',
+    //         ],
+    //         hoverBackgroundColor: [
+    //         '#501800',
+    //         '#4B5000',
+    //         '#175000',
+    //         ],
+    //         data: [(!sortList.fast)?0:sortList.fast.length, (!sortList.med)?0:sortList.med.length, (!sortList.slow)?0:sortList.slow.length]
+    //       }
+    //     ]
+    //   }
 
 
     // const [sortList, setsortList] = useState([])
@@ -31,7 +49,7 @@ return (
          
 <div className="container-fluid">
     <div className="row">
-<div className="col-md-4 bg-danger table-responsive"><table className='table'>
+<div className="col-md-4 bg-danger table-responsive"><table className='table table-hover'>
 
 <thead><tr><th>Slow Learners</th></tr></thead>
 <tbody>
@@ -43,7 +61,7 @@ return (
 
 
 
-<div className="col-md-4 bg-warning table-responsive"><table className='table'>
+<div className="col-md-4 bg-warning table-responsive"><table className='table table-hover'>
 
 <thead><tr><th>Average Learners</th></tr></thead>
 <tbody>
@@ -65,6 +83,24 @@ return (
     </div>
 </div>
 
+<div className='piechart'>
+          {/* <Pie
+             height={'100px'}
+            data={[]}
+            options={{
+              title:{
+              display:true,
+              fontSize:20
+              },
+              legend:{
+                display:true,
+                position:'right'
+                
+              }
+            }}
+          /> */}
+      </div>
+
 
 
 </div>
@@ -74,3 +110,8 @@ return (
 
 export default SortedTable
 // {(!sortList.fast)?<tr><td>loading</td></tr>:sortList.fast.map((roll)=>(<tr key={roll.id}><td>{roll}</td></tr>))}
+
+
+
+   
+ 
