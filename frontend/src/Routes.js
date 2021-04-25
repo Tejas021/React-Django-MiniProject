@@ -29,7 +29,7 @@ const Routes = () => {
 <Route path='/student' component={StudentUI}></Route>
  <Route path='/teacher' component={TeacherUI}></Route>
  <Route path='/login' component={Login}></Route>
- <Route path='/' component={Loginer}></Route>
+ <Route exact path='/' component={Loginer}></Route>
  <Route path= '/about' component ={About}></Route>
  </Switch>
 

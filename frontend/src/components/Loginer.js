@@ -9,7 +9,7 @@ import Signup from './Signup'
 import LogNav from './LogNav'
 import Welcome  from './Welcome'
 const Loginer = () => {
-   const [role, setrole] = useState('false')
+   const [role, setrole] = useState('log')
 
     useEffect((loggedState) => {
         if(loggedState){
@@ -41,18 +41,26 @@ const Loginer = () => {
       },
       body: JSON.stringify(data)
     }).then(res => res.json())
-          .then(json => {
-            localStorage.setItem('token', json.token);
-            localStorage.setItem('id', json.user.id);
-            localStorage.setItem('log',true)
-            console.log(json)
-            setloggedState(true);
-            setdisplay('');
-            setusername(json.user.username)
-            setid(json.user.id)
+          .then(
+           
+              json => {
+                if(json.token===undefined)
+                {alert("Enter correct credentials or Signup")}
+                else
+                {
+                localStorage.setItem('token', json.token);
+                localStorage.setItem('id', json.user.id);
+                localStorage.setItem('log',true)
+                console.log(json)
+                setloggedState(true);
+                setdisplay('');
+                setusername(json.user.username)
+                setid(json.user.id)}
+                
+            }
+     
+          );
             
-            
-          });
 
     }
 
@@ -121,7 +129,9 @@ const Loginer = () => {
             ? 
             role==='teacher'?
              
-             <Redirect username={username} to="/Teacher"/>:<Redirect to="/Student"/>
+             <Redirect username={username} to="/Teacher"/>:
+             role==='student'?
+             <Redirect to="/Student"/>:<></>
             
              : 
             <Welcome/>

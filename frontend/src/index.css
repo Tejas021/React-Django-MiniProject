@@ -107,3 +107,23 @@ hr.light-100 {
 .TableCont {
   margin-top: 20px;
 }
+
+.social a {
+  font-size: 2em;
+  padding: 1rem;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-google-plus-g {
+  color: #db4a39;
+}
+.fa-instagram {
+  color: #3f729b;
+}
+.fa-youtube {
+  color: red;
+}
+.fa-twitter {
+  color: #00acee;
+}

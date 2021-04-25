@@ -15,13 +15,21 @@ const LogNav = ({display_form}) => {
    const logged_out_nav=(
     <ul className="navbar-nav ms-auto">
           
-    <li className="nav-item" id="tej" onClick={(e)=>{e.preventDefault();display_form('login')}}>
+    <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();display_form('login')}}>
       <a className="nav-link" href="/">SignIn</a>
     </li>
-    <li className="nav-item" onClick={(e)=>{e.preventDefault();display_form('signup')}}>
+    <li className="nav-item mx-4" onClick={(e)=>{e.preventDefault();display_form('signup')}}>
       <a className="nav-link" href="/">SignUp</a>
     </li>
-    
+    <li className="nav-item mx-4">
+              <Link
+               
+                className="nav-link"
+                to="/about"
+              >
+                About
+              </Link>
+    </li>
   </ul>
        
    )
@@ -30,9 +38,9 @@ const LogNav = ({display_form}) => {
    <li className="nav-item" id="tej" onClick={(e)=>{e.preventDefault();handleLogout()}}>
      <a className="nav-link" href="/">LogOut</a>
    </li>
-   <li className="nav-item mx-2">
+   <li className="nav-item mx-4">
               <Link
-                from='./'
+               
                 className="nav-link"
                 to="/about"
               >
