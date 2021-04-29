@@ -6,7 +6,7 @@ const [ia2, setia2] = useState([])
 const [termwork, settermwork] = useState([])
 const [endsem, setendsem] = useState([])
 const [subject, setsubject] = useState([])
-
+let owner=localStorage.getItem('id')
 
 const addSubject=(e)=>{
   e.preventDefault()
@@ -14,8 +14,8 @@ if(ia1===''){
   alert('enter the marks buddy')
   return
 }
-const owner=1
-  onAdd({owner,subject,ia1,ia2,endsem,termwork})
+
+  onAdd({owner,subject,ia1,ia2,endsem,termwork,owner})
   setia1('')
   setia2('')
   setendsem('')
@@ -27,7 +27,7 @@ const owner=1
     return (
         <div>
             <div className='container-fluid p-3' >
-        <h2 className='m-2'>Add Subject</h2>
+        <h2 className='m-2 text-center'>Add Subject</h2>
         <h5 className='' style={{textAlign:'left'}}>Enter the following info:</h5>
          <form className='justify-content-center' onSubmit={addSubject}>
   <div className="form-row row">

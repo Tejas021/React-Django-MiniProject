@@ -1,5 +1,6 @@
 import React from 'react'
 import LogNav from './LogNav'
+import profile from '../profile.jpg'
 const About = () => {
     return (
 <div>
@@ -40,22 +41,22 @@ const About = () => {
 
 
 
-<div className='row'>
+<div className='row px-5'>
     
-    <div className="card col-md-4">
-    <img src="https://source.unsplash.com/random/300x200" className="card-img-top" alt="..."/>
+    <div className="card col-md-3 mx-5 py-3">
+    <img src={profile} className="profimg card-img-top" alt="..."/>
     <div className="card-body">
         <p className="card-text">Name: Akshay Hegde<br/>Roll no: 14<br/>S.E.I.T</p>
     </div>
     </div>
-    <div className="card col-md-4">
-    <img src="https://source.unsplash.com/random/300x200" className="card-img-top" alt="..."/>
+    <div className="card col-md-3 mx-5 py-3">
+    <img src={profile}  className="profimg card-img-top" alt="..."/>
     <div className="card-body">
         <p className="card-text">Name: Tejas Kolwankar<br/>Roll no: 21<br/>S.E.I.T</p>
     </div>
     </div>
-    <div className="card col-md-4">
-    <img src="https://source.unsplash.com/random/300x200" className="card-img-top" alt="..."/>
+    <div className="card col-md-3 mx-5 py-3">
+    <img src={profile} className="profimg card-img-top" alt="..."/>
     <div className="card-body">
         <p className="card-text">Name: Bhargav Kashya<br/>Roll no: 19<br/>S.E.I.T</p>
     </div>

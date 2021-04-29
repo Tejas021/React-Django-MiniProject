@@ -1,27 +1,29 @@
 // // import {useEffect,useState} from 'react'
-// import {Pie, Doughnut} from 'react-chartjs-2';
+import {Pie, Doughnut} from 'react-chartjs-2';
 const SortedTable = ({sortList}) => {
 
-
-    // const state1 = {
-    //     labels: ['Fast learner', 'Average learner', 'Slow learner'],
-    //     datasets: [
-    //       {
-    //         label: 'To find slow and fast lerner',
-    //         backgroundColor: [
-    //           '#B21F00',
-    //           '#C9DE00',
-    //           '#2FDE00',
-    //         ],
-    //         hoverBackgroundColor: [
-    //         '#501800',
-    //         '#4B5000',
-    //         '#175000',
-    //         ],
-    //         data: [(!sortList.fast)?0:sortList.fast.length, (!sortList.med)?0:sortList.med.length, (!sortList.slow)?0:sortList.slow.length]
-    //       }
-    //     ]
-    //   }
+    const options = {
+        maintainAspectRatio: false	// Don't maintain w/h ratio
+      }
+    const state1 = {
+        labels: ['Fast learner', 'Average learner', 'Slow learner'],
+        datasets: [
+          {
+            label: 'To find slow and fast lerner',
+            backgroundColor: [
+              '#28a745',
+              '#ffc107',
+              '#dc3545',
+            ],
+            hoverBackgroundColor: [
+            '#175000',
+            '#4B5000',
+            '#501800',
+            ],
+            data: [(!sortList.fast)?0:sortList.fast.length, (!sortList.med)?0:sortList.med.length, (!sortList.slow)?0:sortList.slow.length]
+          }
+        ]
+      }
 
 
     // const [sortList, setsortList] = useState([])
@@ -82,11 +84,12 @@ return (
 
     </div>
 </div>
-
+<article className='className="canvas-container"'>
 <div className='piechart'>
-          {/* <Pie
+          <Pie
+          options={options}
              height={'100px'}
-            data={[]}
+            data={state1}
             options={{
               title:{
               display:true,
@@ -98,8 +101,11 @@ return (
                 
               }
             }}
-          /> */}
+          />
       </div>
+
+</article>
+
 
 
 

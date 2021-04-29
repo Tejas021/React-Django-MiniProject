@@ -1,7 +1,7 @@
 
 from rest_framework import routers
 from .api import StudentTableViewSet, TeacherTableViewSet
-from .views import StudentData, StudentTables, TeacherTables
+from .views import StudentData, StudentTables, TeacherTables, StudentEvaluation
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
 from .views import current_user, UserList
@@ -15,7 +15,8 @@ urlpatterns = [
     path('student', StudentTables.as_view()),
     path('teacher', TeacherTables.as_view()),
     path('current_user/', current_user),
-    path('users/', UserList.as_view())
+    path('users/', UserList.as_view()),
+    path('eval', StudentEvaluation.as_view()),
 ]
 
 urlpatterns += router.urls

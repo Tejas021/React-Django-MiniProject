@@ -1,13 +1,13 @@
 import React from 'react'
-import {Redirect,Link} from 'react-router-dom'
-import {useState} from 'react'
+import {Link,useHistory} from 'react-router-dom'
 const LogNav = ({display_form}) => {
-   const [move, setmove] = useState(false)
+  const history = useHistory();
+   
     const handleLogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('id');
-        localStorage.removeItem('log')
-        setmove(true)
+        localStorage.removeItem('log');
+        history.push('/')
     };
 
 
@@ -24,19 +24,14 @@ const LogNav = ({display_form}) => {
               </Link>
     </li>
     <li className="nav-item mx-4">
-              <Link
-               
-                className="nav-link"
-                to="/"
-              >
-                Home
-              </Link>
+          
+              <a className="nav-link" onClick={() => history.push('/')} >Home</a>
     </li>   
     <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();display_form('login')}}>
-      <a className="nav-link" href="/">SignIn</a>
+      <a className="nav-link">SignIn</a>
     </li>
     <li className="nav-item mx-4" onClick={(e)=>{e.preventDefault();display_form('signup')}}>
-      <a className="nav-link" href="/">SignUp</a>
+      <a className="nav-link" >SignUp</a>
     </li>
     
   </ul>
@@ -45,25 +40,16 @@ const LogNav = ({display_form}) => {
    const logged_in_nav=(
    <ul className="navbar-nav ms-auto">       
    <li className="nav-item mx-4">
-              <Link
-               
-                className="nav-link"
-                to="/about"
-              >
-                About
-              </Link>
+              
+   <a className="nav-link" onClick={() => history.push('/about')} >About</a>
+              
     </li>
     <li className="nav-item mx-4">
-              <Link
-               
-                className="nav-link"
-                to="/"
-              >
-                Home
-              </Link>
+    <a className="nav-link" onClick={() => history.push('/')} >Home</a>
+              
     </li>
-   <li className="nav-item" id="tej" onClick={(e)=>{e.preventDefault();handleLogout()}}>
-     <a className="nav-link" href="/">LogOut</a>
+   <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();handleLogout()}}>
+     <a className="nav-link" >LogOut</a>
    </li>
    
  </ul>
@@ -71,7 +57,6 @@ const LogNav = ({display_form}) => {
    
     return (
         <div>
-           { !move?
              <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
       <a className="mx-3 navbar-brand" href="/"><h3>StudEval</h3></a>
       <button
@@ -91,10 +76,7 @@ const LogNav = ({display_form}) => {
    
  
       </div>
-    </nav>:
-    <Redirect to='/'></Redirect>
-    // <h1>adf</h1>
-           }
+    </nav>
         </div>
     )
 }

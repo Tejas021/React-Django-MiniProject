@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #272727;
+  color: rgb(4, 134, 59);
 }
 
 code {
@@ -129,4 +131,28 @@ hr.light-100 {
 }
 .navbar {
   background: transparent;
+}
+a:hover {
+  cursor: pointer;
+}
+
+.profimg {
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
+
+a {
+  color: #00acee;
+}
+.card {
+  background-color: #292c31;
+  color: rgb(209, 198, 198);
+}
+.nav-item {
+  color: rgb(4, 134, 59);
+}
+.navbar {
+  background-color: #272727;
+  color: rgb(4, 134, 59);
 }

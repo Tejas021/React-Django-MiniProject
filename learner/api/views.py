@@ -64,9 +64,25 @@ class StudentData(APIView):
 
 
 class StudentEvaluation(APIView):
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = StudentTableSerializer
+    lookup_url_kwarg = 'owner'
+
     def get(self, request, format=None):
-        data1 = StudentTable.objects.all()
-        print(data1)
+        owner = request.GET.get(self.lookup_url_kwarg)
+        studSub = StudentTable.objects.filter(owner=owner)
+        sum1 = 0
+        res = 0
+        for i in studSub:
+            sum1 += (i.ia1+i.ia2+i.termwork+i.endsem)
+        percentage = (sum1/(len(studSub)*145))*100
+        if percentage > 80:
+            res = 2
+        elif percentage > 40:
+            res = 1
+        else:
+            res = 0
+        return Response(res, status=status.HTTP_200_OK)
 
 
 class StudentTables(APIView):
@@ -82,7 +98,6 @@ class StudentTables(APIView):
         for i in data:
             data1.append(StudentTableSerializer(i).data)
 
-        print(list(data1))
         return Response(data1, status=status.HTTP_200_OK)
 
 

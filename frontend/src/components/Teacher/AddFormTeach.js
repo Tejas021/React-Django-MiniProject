@@ -28,7 +28,7 @@ setstudent_name('')
 
 return (
      <div className='container-fluid p-3' >
-        <h2 className='m-2'>New Student</h2>
+        <h2 className='m-2 text-center'>New Student</h2>
         <h5 className='' style={{textAlign:'left'}}>Enter the following info:</h5>
          <form className='justify-content-center' onSubmit={onSubmit}>
   <div className="form-row row">

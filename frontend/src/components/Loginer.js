@@ -1,16 +1,14 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
-// import LoginForm from './components/LoginForm'
-// import SignupForm from './components/SignupForm'
-// import Nav from './components/Nav'
 import Login from './Login'
 import { Redirect } from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import Signup from './Signup'
 import LogNav from './LogNav'
 import Welcome  from './Welcome'
 const Loginer = () => {
    const [role, setrole] = useState('log')
-
+const history=useHistory();
     useEffect((loggedState) => {
         if(loggedState){
             fetch('http://localhost:8000/api/current_user/', {
@@ -116,7 +114,6 @@ const Loginer = () => {
 
     return (
         <div className="App">
-
         <LogNav logged_in={loggedState}
           display_form={displayForm}
           handle_logout={handleLogout}/>
@@ -128,11 +125,10 @@ const Loginer = () => {
 
             ? 
             role==='teacher'?
-             
-             <Redirect username={username} to="/Teacher"/>:
+             history.push('/Teacher'):
+            //  <Redirect username={username} to="/Teacher"/>:
              role==='student'?
-             <Redirect to="/Student"/>:<></>
-            
+             history.push('/Student'):<></>
              : 
             <Welcome/>
             }

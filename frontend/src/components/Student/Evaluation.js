@@ -12,17 +12,22 @@ const Evaluation = ({result}) => {
     header='Good Job !!'
     color='warning'
     }
-    else{
+    else if(result===2){
     text ="Excellent work keep working"
     header="Amazing Mate!!!"
     color='success'
+    }
+    else{
+      text ="Loading"
+    header="Loading"
+    color='light'
     }
     
     
         return (
             <div>
                 <h3 style={{textAlign:'left'}}>Your Evaluation:</h3>
-                <div className={`jumbotron jumbotron-fluid bg-${color}`}>
+                <div className={`jumbotron jumbotron-fluid p-4 bg-${color}`}>
             <div className='container'>
               <h1 className="display-4">{header}</h1>
               <p className="lead">{text}</p>
