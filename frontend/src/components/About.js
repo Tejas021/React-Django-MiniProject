@@ -1,6 +1,7 @@
 import React from 'react'
 import LogNav from './LogNav'
 import profile from '../profile.jpg'
+import img2 from '../img2.jpg'
 const About = () => {
     return (
 <div>
@@ -17,13 +18,13 @@ const About = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="https://source.unsplash.com/random/300x100" className="d-block w-100" alt="..."/>
+      <img src={img2} style={{height:"500px"}} className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="https://source.unsplash.com/random/300x100" className="d-block w-100" alt="..."/>
+      <img src={img2} style={{height:"500px"}}className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="https://source.unsplash.com/random/300x100" className="d-block w-100" alt="..."/>
+      <img src={img2} style={{height:"500px"}} className="d-block w-100" alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

@@ -1,4 +1,5 @@
 import React from 'react'
+import img1 from '../img1.jpg'
 
 const Welcome = () => {
     return (
@@ -14,7 +15,7 @@ const Welcome = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="https://source.unsplash.com/800x200" className="d-block w-100" alt="..."/>
+      <img src={img1} style={{height:"500px"}} className="d-block w-100" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
       <h1 className='mt-5 md-2'>Welcome to StudEval</h1>
       <h6>A convenient way for teachers and students to manage their their data and get also to get a self generated evaluation of the same</h6>

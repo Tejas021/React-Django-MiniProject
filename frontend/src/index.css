@@ -143,16 +143,16 @@ a:hover {
 }
 
 a {
-  color: #00acee;
+  color: #1bb8f7;
 }
 .card {
   background-color: #292c31;
   color: rgb(209, 198, 198);
 }
-.nav-item {
+.navbar-dark .navbar-nav .nav-link {
   color: rgb(4, 134, 59);
+  background-color: #272727;
 }
 .navbar {
-  background-color: #272727;
-  color: rgb(4, 134, 59);
+  background-color: #272727 !important;
 }
