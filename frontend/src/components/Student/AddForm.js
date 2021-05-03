@@ -15,7 +15,7 @@ if(ia1===''){
   return
 }
 
-  onAdd({owner,subject,ia1,ia2,endsem,termwork,owner})
+  onAdd({owner,subject,ia1,ia2,endsem,termwork})
   setia1('')
   setia2('')
   setendsem('')

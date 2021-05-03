@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #272727;
-  color: rgb(4, 134, 59);
+  background-color: whitesmoke;
+  color: #121212;
 }
 
 code {
@@ -121,7 +121,7 @@ hr.light-100 {
   color: #db4a39;
 }
 .fa-instagram {
-  color: #3f729b;
+  color: #292c31;
 }
 .fa-youtube {
   color: red;
@@ -150,9 +150,9 @@ a {
   color: rgb(209, 198, 198);
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: rgb(4, 134, 59);
-  background-color: #272727;
+  color: whitesmoke;
+  /* background-color: #272727; */
 }
 .navbar {
-  background-color: #272727 !important;
+  background-color: #292c31 !important;
 }

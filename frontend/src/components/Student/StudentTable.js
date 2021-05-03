@@ -1,10 +1,12 @@
 
 
 
-const StudentTable = ({subject,add,showAdd}) => {
+const StudentTable = ({subject,add,showAdd,DeleteFormThere,deleteForm,EditFormThere,updateForm}) => {
  
     const marks=subject
   let text=showAdd ? 'Close':'New'
+  let EditText=updateForm?'Close':'Edit'
+    let DeleteText=deleteForm?'Close':'Delete'
 
     return (
         <div>
@@ -21,7 +23,8 @@ const StudentTable = ({subject,add,showAdd}) => {
                 <button type="button" className="btn btn-outline-success buttons" onClick={add}>
                     {text}
                 </button>
-                <button type="button" className="btn btn-outline-success buttons">Edit</button>
+                <button type="button" className="btn btn-outline-success buttons" onClick={EditFormThere}>{EditText}</button>
+                <button type="button" className="btn btn-outline-success buttons" onClick={DeleteFormThere}>{DeleteText}</button>
             </div>
         </div>
     </div>
@@ -29,6 +32,7 @@ const StudentTable = ({subject,add,showAdd}) => {
         <table className="table table-bordered table-dark">
             <thead>
                 <tr>
+                <th scope="col" rowSpan="2" >Subject Id</th>
                     <th scope="col" rowSpan="2" >Subject</th>
                     <th scope="col" colSpan="2" style={{textAlign:'center'}}>IA-1</th>
                     <th scope="col" colSpan="2" style={{textAlign:'center'}}>IA-2</th>
@@ -40,6 +44,7 @@ const StudentTable = ({subject,add,showAdd}) => {
             </thead>
             <thead>
                 <tr>
+                    <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col">scored</th>
                     <th scope="col">o/f</th>
@@ -59,6 +64,7 @@ const StudentTable = ({subject,add,showAdd}) => {
             {
                 marks.map((mark)=>(
                     <tr key={mark.id}>
+                        <th >{mark.id}</th>
                     <th scope="row">{mark.subject}</th>
                     <td>{mark.ia1}</td>
                     <td>20</td>

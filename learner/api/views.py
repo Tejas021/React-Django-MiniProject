@@ -113,3 +113,5 @@ class TeacherTables(APIView):
         for i in data:
             data1.append(TeacherTableSerializer(i).data)
         return Response(data1, status=status.HTTP_200_OK)
+
+    # def patch(self,request,format=None):

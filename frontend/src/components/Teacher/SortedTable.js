@@ -1,10 +1,10 @@
 // // import {useEffect,useState} from 'react'
-import {Pie, Doughnut} from 'react-chartjs-2';
+import {Pie} from 'react-chartjs-2';
 const SortedTable = ({sortList}) => {
 
-    const options = {
-        maintainAspectRatio: false	// Don't maintain w/h ratio
-      }
+    // const options = {
+    //     maintainAspectRatio: false	// Don't maintain w/h ratio
+    //   }
     const state1 = {
         labels: ['Fast learner', 'Average learner', 'Slow learner'],
         datasets: [
@@ -87,7 +87,7 @@ return (
 <article className='className="canvas-container"'>
 <div className='piechart'>
           <Pie
-          options={options}
+          // options={options}
              height={'100px'}
             data={state1}
             options={{

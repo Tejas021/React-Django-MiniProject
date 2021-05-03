@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import Login from './Login'
-import { Redirect } from 'react-router-dom'
+
 import {useHistory} from 'react-router-dom'
 import Signup from './Signup'
 import LogNav from './LogNav'
@@ -83,6 +83,7 @@ const history=useHistory();
             setid(json.id)
             console.log(id)
             setusername(json.username)
+            console.log(username)
       });
     }
     

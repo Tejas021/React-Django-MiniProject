@@ -3,11 +3,15 @@ import React from "react";
 import TeacherTable from "./TeacherTable";
 import SortedTable from './SortedTable'
 import AddForm from './AddFormTeach'
+import EditForm from './EditForm'
 import PieChart from './PieChart'
+import DeleteForm from './DeleteForm'
 import LogNav from '../LogNav'
 import {useState,useEffect} from 'react'
 const TeacherUI = () => {
   const [displayForm, setdisplayForm] = useState(false)
+  const [updateForm, setupdateForm] = useState(false)
+  const [deleteForm, setdeleteForm] = useState(false)
   const [student, setStudent] = useState([])
   const [sortList, setsortList] = useState([])
  
@@ -42,6 +46,8 @@ const TeacherUI = () => {
 
 
 const addFormThere=()=>{setdisplayForm(!displayForm)}
+const EditFormThere=()=>{setupdateForm(!updateForm)}
+const DeleteFormThere=()=>{console.log("delete");setdeleteForm(!deleteForm)}
 
 const addStudent=async (newstudent)=>{
   const res= await fetch('http://localhost:8000/api/teachertable/',{
@@ -61,6 +67,13 @@ const addStudent=async (newstudent)=>{
 }
 
  
+const deleteStudent=()=>{
+
+}
+
+const updateStudent=()=>{
+
+}
 
   return (
     <div>
@@ -68,12 +81,17 @@ const addStudent=async (newstudent)=>{
     
       <h1 className="Title" style={{textAlign:'left'}}>Welcome To StudEval</h1>
 
+      <h3 style={{marginLeft: '20px',textAlign:'left'}}>Your Student Records:</h3>
+      <br />
+
       <br />
       {displayForm&&<AddForm onAdd={addStudent}/>}
-<h3 style={{marginLeft: '20px',textAlign:'left'}}>Your Student Records:</h3>
-      <br />
+      {updateForm&&<EditForm onUpdate={updateStudent}/>}
+      {deleteForm&&<DeleteForm onDelete={deleteStudent}/>}
+      
+
     
-      <TeacherTable marks={student} renderForm={addFormThere} addForm={displayForm}/>
+      <TeacherTable marks={student} renderForm={addFormThere} addForm={displayForm} updateForm={updateForm} EditFormThere={EditFormThere} DeleteFormThere={DeleteFormThere} deleteForm={deleteForm}/>
 {/* {console.log(owner)} */}
       <SortedTable sortList={sortList}/>
       <PieChart sortList={sortList}/>

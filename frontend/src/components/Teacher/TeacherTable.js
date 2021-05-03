@@ -2,9 +2,11 @@ import React from 'react'
 
 
 
-const TeacherTable = ({marks,renderForm,addForm}) => {
+const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteForm,DeleteFormThere}) => {
     
     let text=addForm?'Close':'New'
+    let EditText=updateForm?'Close':'Edit'
+    let DeleteText=deleteForm?'Close':'Delete'
     return (
         
         <div>
@@ -22,7 +24,10 @@ const TeacherTable = ({marks,renderForm,addForm}) => {
                 <button type="button" className="btn btn-outline-success buttons" onClick={renderForm} >
                    {text}
                 </button>
-                <button type="button" className="btn btn-outline-success buttons">Edit</button>
+                <button type="button" className="btn btn-outline-success buttons" onClick={EditFormThere}>{EditText}</button>
+                <button type="button" className="btn btn-outline-success buttons" onClick={DeleteFormThere} >
+                  {DeleteText}
+                </button>
             </div>
         </div>
     </div>
@@ -33,6 +38,7 @@ const TeacherTable = ({marks,renderForm,addForm}) => {
     <table className="table table-bordered table-dark">
       <thead>
         <tr>
+        <th scope="col" rowSpan="2">Student Id</th>
           <th scope="col" rowSpan="2">Roll no</th>
           <th scope="col" colSpan="2" style={{textAlign: "center"}}>IA-1</th>
           <th scope="col" colSpan="2" style={{textAlign: "center"}}>IA-2</th>
@@ -48,7 +54,7 @@ const TeacherTable = ({marks,renderForm,addForm}) => {
       <thead>
         <tr>
 
-    
+         <th scope="col"></th>
           <th scope="col"></th>
           <th scope="col">scored</th>
           <th scope="col">o/f</th>
@@ -69,6 +75,7 @@ const TeacherTable = ({marks,renderForm,addForm}) => {
         // <th style={{color:'white',background:'black'}}>{data.id}</th>
         
         <tr key={data.id}>
+        <th >{data.id}</th>
         <th >{data.student_roll}</th>
       <td>{data.ia1}</td>
       <td>20</td>

@@ -1,0 +1,26 @@
+import React from 'react'
+import {useState} from 'react'
+const DeleteForm = () => {
+    const [studentId, setstudentId] = useState([])
+    const onSubmit=({onDelete})=>{
+        console.log("hi")
+        onDelete()
+    }
+    return (
+        <div>
+            <h3 className='m-4'>Delete Student</h3>
+            <form className='justify-content-center' onSubmit={onSubmit}>
+  <div className="form-row row">
+    <div className="form-group col-md-6 m-2">  
+      <input type="number" className="form-control" placeholder="Student ID" value={studentId}
+          onChange={(e) => setstudentId(e.target.value)}/>
+    </div>
+   
+  </div>
+  <button type="submit" className="m-3 btn btn-success">Delete</button>
+</form>
+        </div>
+    )
+}
+
+export default DeleteForm

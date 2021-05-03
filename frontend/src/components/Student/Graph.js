@@ -11,6 +11,7 @@ let labels=[];
   subject.map((sub)=>{
       data.push(((sub.ia1+sub.ia1+sub.termwork+sub.endsem)/145)*100)
       labels.push(sub.subject)
+      return 1
   })
 
     const state = {
@@ -30,12 +31,7 @@ let labels=[];
       return (
         <div >
             <Bar
-          //   scales={
-          //     xAxes: {
-          //         barThickness: 6,  // number (pixels) or 'flex'
-          //         maxBarThickness: 8 // number (pixels)
-          //     }
-          // }
+       
 
           data={state}
           options={{
