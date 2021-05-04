@@ -35,7 +35,7 @@ const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteF
 
 
             <div className="table-responsive">
-    <table className="table table-bordered table-dark">
+    <table className="table   table-info table-hover" >
       <thead>
         <tr>
         <th scope="col" rowSpan="2">Student Id</th>

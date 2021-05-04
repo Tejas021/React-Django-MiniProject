@@ -26,7 +26,7 @@ const Studentsubmitter=(e)=>{
 
     return (
 
-      <div >
+      <div  >
         
 <h1
       style={{
@@ -40,7 +40,7 @@ const Studentsubmitter=(e)=>{
     </h1>
 
 
-<div style={{marginTop: '40px'}} className="container login-container">
+<div style={{marginTop: '40px'}} className="container login-container p-0">
         <div className="row">
           <div className="col-md-6 login-form-1">
             <h3>Teachers</h3>
@@ -85,7 +85,7 @@ const Studentsubmitter=(e)=>{
 
 
          
-          <div className="col-md-6 login-form-2 my-2">
+          <div className="col-md-6 login-form-2 ">
             <h3>Students</h3>
             <form onSubmit={Studentsubmitter}>
               <div className="form-group">

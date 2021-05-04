@@ -20,7 +20,9 @@ const [updateForm, setupdateForm] = useState(false)
             setsubject(subjects)
         }   
     getSubject()
-    const geteval=async()=>{await feteval();
+
+    const geteval=async()=>{
+        await feteval();
     const re=await feteval();
         setresult(re)
     }
@@ -61,7 +63,7 @@ const [updateForm, setupdateForm] = useState(false)
 
 
 const updateSubject=()=>{}
-const deleteSubject=()=>{}
+const deleteSubject=(subjectId)=>{ fetch('http://localhost:8000/api/studenttable/'+subjectId, { method: 'DELETE' })}
 
     return (
         <div>

@@ -5,10 +5,10 @@ import img2 from '../img2.jpg'
 const About = () => {
     return (
 <div>
-  <LogNav/>
+  <LogNav about={true}/>
   <div className="container-fluid">
 
-<h1 className="heading my-2" style={{textAlign:'center'}}>ABOUT US</h1> 
+<h1 className="heading my-2" style={{textAlign:'center'}}>About Us</h1> 
 
 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-indicators">

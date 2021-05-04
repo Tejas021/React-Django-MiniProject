@@ -5,8 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: whitesmoke;
-  color: #121212;
+  /* background-color: whitesmoke; */
+  background-color: #121212;
+  color: white;
 }
 
 code {
@@ -54,7 +55,7 @@ code {
 .login-form-2 {
   padding: 5%;
   background: green;
-
+  background-blend-mode: color;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-2 h3 {
@@ -93,7 +94,7 @@ code {
 }
 /*footer*/
 footer {
-  background: #3f3f3f;
+  background: #121212 !important;
   color: #d5d5d5;
   padding-top: 20px;
 }
@@ -121,7 +122,7 @@ hr.light-100 {
   color: #db4a39;
 }
 .fa-instagram {
-  color: #292c31;
+  color: #d156bd;
 }
 .fa-youtube {
   color: red;
@@ -151,8 +152,8 @@ a {
 }
 .navbar-dark .navbar-nav .nav-link {
   color: whitesmoke;
-  /* background-color: #272727; */
+  /* background-color: #121212; */
 }
 .navbar {
-  background-color: #292c31 !important;
+  background-color: #121212 !important;
 }

@@ -10,7 +10,7 @@ const Loginer = () => {
    const [role, setrole] = useState('log')
 const history=useHistory();
     useEffect((loggedState) => {
-      {setrole(localStorage.getItem('role'))}
+      setrole(localStorage.getItem('role'))
         if(loggedState){
             fetch('http://localhost:8000/api/current_user/', {
                         headers: {

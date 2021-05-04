@@ -1,11 +1,16 @@
 import React from 'react'
 import {useState} from 'react'
 
-const DeleteForm = () => {
+const DeleteForm = ({onDelete}) => {
+  
     const [subjectid, setsubjectid] = useState([])
-    const onSubmit=({onDelete})=>{
-        console.log("hi")
-        onDelete()
+    const onSubmit=(e)=>{
+  e.preventDefault()
+      console.log("hi")
+
+        onDelete(subjectid)
+      alert('Subject '+subjectid+' deleted')
+        setsubjectid('')  
     }
     return (
         <div>

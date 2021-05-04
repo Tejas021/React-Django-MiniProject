@@ -10,6 +10,7 @@ const TeacherSignUp = ({handle_signup,setrole}) => {
        console.log(handle_signup)
        handle_signup(e,{'username':username,'password':password})
        setrole('teacher')
+       localStorage.setItem('role','teacher')
    }
     return (
     

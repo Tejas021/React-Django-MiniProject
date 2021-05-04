@@ -18,13 +18,13 @@ const Signup = ({handle_signup,setrole}) => {
 
     return (
         <div>
-           
+           <button className='btn btn-outline-success mb-3' onClick={ChangeState} >{text}</button>
             
             {(toggler)?<TeacherSignUp handle_signup={handle_signup} setrole={setrole}/>:<StudentSigUp setrole={setrole} handle_signup={handle_signup}/>}
             
             {/* <TeacherSignUp/>
             <StudentSigUp/> */}
-             <button className='btn btn-outline-success mt-3' onClick={ChangeState} >{text}</button>
+             
         </div>
     )
 }

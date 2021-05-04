@@ -39,7 +39,7 @@ const TeacherUI = () => {
 
     
     const getSortList= async()=>{
-      const sortlist= fetch('http://localhost:8000/api/sort?owner='+localStorage.getItem('id')).then((res)=>res.json())
+      const sortlist=await fetch('http://localhost:8000/api/sort?owner='+localStorage.getItem('id')).then((res)=>res.json())
       return sortlist
   }
 
@@ -70,11 +70,11 @@ const addStudent=async (newstudent)=>{
 const deleteStudent=(studentId)=>{
 
  fetch('http://localhost:8000/api/teachertable/'+studentId, { method: 'DELETE' })
- const getMarks = async () => {
-  const tasksFromServer = await fetchStudents()
-  setStudent(tasksFromServer)
-}
-  
+//  const getMarks = async () => {
+//   const tasksFromServer = await fetchStudents()
+//   setStudent(tasksFromServer)
+// }
+  //getMarks()
 }
 
 const updateStudent=()=>{
