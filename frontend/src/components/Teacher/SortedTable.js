@@ -51,7 +51,7 @@ return (
          
 <div className="container-fluid">
     <div className="row">
-<div className="col-md-4 bg-danger table-responsive"><table className='table table-hover'>
+<div className="col-md-4  table-responsive"><table className='table bg-danger text-center table-hover'>
 
 <thead><tr><th>Slow Learners</th></tr></thead>
 <tbody>
@@ -63,7 +63,7 @@ return (
 
 
 
-<div className="col-md-4 bg-warning table-responsive"><table className='table table-hover'>
+<div className="col-md-4  table-responsive"><table className='table bg-warning text-center table-hover'>
 
 <thead><tr><th>Average Learners</th></tr></thead>
 <tbody>
@@ -72,7 +72,7 @@ return (
 
 </table></div>
 
-<div className="col-md-4 bg-success table-responsive"><table className='table table-hover'>
+<div className="col-md-4  table-responsive"><table className='table bg-success text-center table-hover'>
 
 <thead><tr><th>Fast Learners</th></tr></thead>
 <tbody>

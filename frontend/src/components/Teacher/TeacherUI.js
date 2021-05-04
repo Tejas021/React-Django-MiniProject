@@ -85,7 +85,7 @@ const updateStudent=()=>{
     <div>
       <LogNav/>
     
-      <h1 className="Title" style={{textAlign:'left'}}>Welcome To StudEval</h1>
+      <h1 className="Title mb-4" style={{textAlign:'left'}}>Welcome To StudEval</h1>
 
       <h3 style={{marginLeft: '20px',textAlign:'left'}}>Your Student Records:</h3>
       <br />
