@@ -10,6 +10,7 @@ const Loginer = () => {
    const [role, setrole] = useState('log')
 const history=useHistory();
     useEffect((loggedState) => {
+      {setrole(localStorage.getItem('role'))}
         if(loggedState){
             fetch('http://localhost:8000/api/current_user/', {
                         headers: {
@@ -115,6 +116,7 @@ const history=useHistory();
 
     return (
         <div className="App">
+          
         <LogNav logged_in={loggedState}
           display_form={displayForm}
           handle_logout={handleLogout}/>
@@ -122,6 +124,7 @@ const history=useHistory();
         <h3>
           
           {
+            
           loggedState
 
             ? 
@@ -130,7 +133,7 @@ const history=useHistory();
             //  <Redirect username={username} to="/Teacher"/>:
              role==='student'?
              history.push('/Student'):<></>
-             : 
+             :
             <Welcome/>
             }
             

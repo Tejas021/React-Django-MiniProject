@@ -7,6 +7,7 @@ const LogNav = ({display_form}) => {
         localStorage.removeItem('token');
         localStorage.removeItem('id');
         localStorage.removeItem('log');
+        localStorage.removeItem('role');
         history.push('/')
     };
 

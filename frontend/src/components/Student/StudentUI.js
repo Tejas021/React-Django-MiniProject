@@ -25,13 +25,16 @@ const [updateForm, setupdateForm] = useState(false)
         setresult(re)
     }
     geteval()
-    console.log(result)
-}, )
+},[] )
     
 
     const fecthSubject = async()=>{
         const data =fetch('http://localhost:8000/api/student?owner='+localStorage.getItem('id')).then((res)=>res.json())
         return data
+    }
+    const feteval=async ()=>{
+        const dat=await fetch('http://localhost:8000/api/eval?owner='+localStorage.getItem('id')).then((res)=>res.json())
+        return dat;
     }
 
     const addNewSubject = async(sub)=>{
@@ -48,10 +51,7 @@ const [updateForm, setupdateForm] = useState(false)
   
 
     
-    const feteval=async ()=>{
-        const dat=await fetch('http://localhost:8000/api/eval?owner='+localStorage.getItem('id')).then((res)=>res.json())
-        return dat;
-    }
+    
 
 
 

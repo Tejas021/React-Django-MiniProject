@@ -67,8 +67,14 @@ const addStudent=async (newstudent)=>{
 }
 
  
-const deleteStudent=()=>{
+const deleteStudent=(studentId)=>{
 
+ fetch('http://localhost:8000/api/teachertable/'+studentId, { method: 'DELETE' })
+ const getMarks = async () => {
+  const tasksFromServer = await fetchStudents()
+  setStudent(tasksFromServer)
+}
+  
 }
 
 const updateStudent=()=>{

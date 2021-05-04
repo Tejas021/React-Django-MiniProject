@@ -1,10 +1,12 @@
 import React from 'react'
 import {useState} from 'react'
-const DeleteForm = () => {
+const DeleteForm = ({onDelete}) => {
     const [studentId, setstudentId] = useState([])
-    const onSubmit=({onDelete})=>{
-        console.log("hi")
-        onDelete()
+    const onSubmit=(e)=>{
+       e.preventDefault()
+       setstudentId('')
+       alert("Student "+studentId+" deleted")
+        onDelete(studentId)
     }
     return (
         <div>

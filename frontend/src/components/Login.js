@@ -12,6 +12,7 @@ const Teachersubmitter=(e)=>{
   console.log({'username':username,'password':password})
   handle_login(e,{'username':username,'password':password})
   setrole('teacher')
+  localStorage.setItem('role','teacher')
 
 }
 
@@ -20,7 +21,7 @@ const Studentsubmitter=(e)=>{
   console.log({'username':username,'password':password})
   handle_login(e,{'username':username,'password':password})
   setrole('student')
-
+  localStorage.setItem('role','student')
 }
 
     return (

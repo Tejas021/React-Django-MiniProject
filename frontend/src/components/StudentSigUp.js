@@ -9,6 +9,7 @@ const StudentSigUp = ({handle_signup,setrole}) => {
        console.log(handle_signup)
        handle_signup(e,{'username':username,'password':password})
        setrole('student')
+       localStorage.setItem('role','student')
    }
    
     return (
