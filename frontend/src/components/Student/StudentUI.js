@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react'
 // import Navbar from '../Navbar'
 import LogNav from '../LogNav'
+
 import StudentTable from './StudentTable'
 import Evaluation from './Evaluation'
 import AddForm from './AddForm'
@@ -89,6 +90,7 @@ const deleteSubject=(subjectId)=>{ fetch('http://localhost:8000/api/studenttable
             <Evaluation result={result}/>
             
             <Graph subject={subject}/>
+            {/* <Line1/> */}
         </div>
     )
 

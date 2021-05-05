@@ -15,10 +15,10 @@ const Welcome = () => {
   </div> */}
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={img1} style={{height:"500px"}} className="d-block w-100" alt="..."/>
-      <div className="carousel-caption d-none d-md-block" style={{position:'absolute' ,top:'240px'}}>
-      <h1 className='mt-5 md-2' >Welcome to StudEval</h1>
-      <h6>A convenient way for teachers and students to manage their their data and get also to get a self generated evaluation of the same</h6>
+      <img src={img1}  className="d-block w-100 imgcaro" alt="..."/>
+      <div className="carousel-caption ">
+      <h1 className='mt-5 md-2 caption' >Welcome to StudEval</h1>
+      <h6 className='caption'>A convenient way for teachers and students to manage their their data and get also to get a self generated evaluation of the same</h6>
       
       </div>
     </div>
@@ -70,8 +70,8 @@ const Welcome = () => {
 	<div className="row padding text-center">
     <div className="col-md-4">
 
-<h3>StudEval</h3>
-<hr className="light"/>
+<h4>StudEval</h4>
+<hr />
       <h6>952-710-5923</h6>
       <h6>305,Jairaj co.op</h6>
       <h6>100 ft road.</h6>

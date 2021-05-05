@@ -26,7 +26,7 @@ const Evaluation = ({result}) => {
     
         return (
             <div>
-                <h3 style={{textAlign:'left'}}>Your Evaluation:</h3>
+                <h3 style={{textAlign:'left'} } className='m-3'>Your Evaluation:</h3>
                 <div className={`jumbotron jumbotron-fluid p-4 bg-${color}`}>
             <div className='container'>
               <h1 className="display-4">{header}</h1>

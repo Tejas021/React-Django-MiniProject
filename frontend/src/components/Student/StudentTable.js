@@ -16,7 +16,7 @@ const StudentTable = ({subject,add,showAdd,DeleteFormThere,deleteForm,EditFormTh
     <div className="container-fluid">
         <div className="row">
             <div className="col-lg-5 col-xs-5 ">
-                <h4 style={{margin: "20px",textAlign:'left'}}>Table 1:</h4>
+                <h3 style={{margin: "20px",textAlign:'left'}}>Table 1:</h3>
             </div>
 
             <div className="col-lg-7 col-xs-7">
@@ -29,7 +29,7 @@ const StudentTable = ({subject,add,showAdd,DeleteFormThere,deleteForm,EditFormTh
         </div>
     </div>
     <div className="table-responsive">
-        <table className="table table-bordered table-dark">
+        <table className="table table-bordered table-success">
             <thead>
                 <tr>
                 <th scope="col" rowSpan="2" >Subject Id</th>

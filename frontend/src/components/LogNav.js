@@ -68,16 +68,16 @@ const LogNav = ({display_form,about}) => {
    
     return (
         <div>
-           <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-  {/* <div class="container-fluid"> */}
-    <a class=" mx-3 navbar-brand" href="/"><h3>StudEval</h3></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+           <nav className="navbar navbar-expand-lg navbar-dark bg-light">
+  {/* <div className="container-fluid"> */}
+    <a className=" mx-3 navbar-brand" href="/"><h3>StudEval</h3></a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      {/* <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#">Home</a>
         </li>
          
       </ul>
@@ -90,7 +90,7 @@ const LogNav = ({display_form,about}) => {
             
              {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
       <a className="mx-3 navbar-brand" href="/"><h3>StudEval</h3></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
