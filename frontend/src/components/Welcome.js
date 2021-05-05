@@ -70,7 +70,7 @@ const Welcome = () => {
 	<div className="row padding text-center">
     <div className="col-md-4">
 
-<h4>StudEval</h4>
+<h4  style={{color:'green'}}>StudEval</h4>
 <hr />
       <h6>952-710-5923</h6>
       <h6>305,Jairaj co.op</h6>
