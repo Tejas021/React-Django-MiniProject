@@ -25,7 +25,7 @@ if(ia1===''){
 
 
     return (
-        <div>
+      <div className='container-fluid p-3 border border-success' style={{width:'80%'}}>
             <div className='container-fluid p-3' >
         <h2 className='m-2 text-center'>Add Subject</h2>
         <h5 className='' style={{textAlign:'left'}}>Enter the following info:</h5>

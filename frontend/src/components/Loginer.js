@@ -116,7 +116,7 @@ const history=useHistory();
 
     return (
         <div className="App">
-          
+      
         <LogNav logged_in={loggedState}
           display_form={displayForm}
           handle_logout={handleLogout}/>

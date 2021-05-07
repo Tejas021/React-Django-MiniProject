@@ -2,11 +2,12 @@ import React from 'react'
 
 
 
-const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteForm,DeleteFormThere}) => {
+const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteForm,DeleteFormThere,uploadForm,UploadFormThere}) => {
     
     let text=addForm?'Close':'New'
     let EditText=updateForm?'Close':'Edit'
     let DeleteText=deleteForm?'Close':'Delete'
+    let UploadText=uploadForm?'Close':'Upload'
     return (
         
         <div>
@@ -27,6 +28,9 @@ const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteF
                 <button type="button" className="btn btn-outline-success buttons" onClick={EditFormThere}>{EditText}</button>
                 <button type="button" className="btn btn-outline-success buttons" onClick={DeleteFormThere} >
                   {DeleteText}
+                </button>
+                <button type="button" className="btn btn-outline-success buttons" onClick={UploadFormThere} >
+                  {UploadText}
                 </button>
             </div>
         </div>

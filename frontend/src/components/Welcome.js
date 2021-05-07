@@ -17,7 +17,7 @@ const Welcome = () => {
     <div className="carousel-item active">
       <img src={img1}  className="d-block w-100 imgcaro" alt="..."/>
       <div className="carousel-caption ">
-      <h1 className='mt-5 md-2 caption' >Welcome to StudEval</h1>
+      <h1 className='mt-5 md-2 caption' >Welcome to <span style={{color:'green'}}>StudEval</span></h1>
       <h6 className='caption'>A convenient way for teachers and students to manage their their data and get also to get a self generated evaluation of the same</h6>
       
       </div>

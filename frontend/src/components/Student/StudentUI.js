@@ -73,7 +73,7 @@ const deleteSubject=(subjectId)=>{ fetch('http://localhost:8000/api/studenttable
 
 <br/>
 
-            <h3 style={{margin:'20px',textAlign:'left'}}>Your Records</h3>
+            <h3 style={{margin:'20px',textAlign:'left',color:'green'}}>Your Records</h3>
 <br/>
             
             {displayForm&&<AddForm onAdd={addNewSubject}/>}

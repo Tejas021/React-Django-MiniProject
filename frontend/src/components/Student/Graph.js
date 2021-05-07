@@ -23,27 +23,10 @@ let labels=[];
             borderColor: 'rgba(0,0,0,1)',
             borderWidth: 2,
             data: data
-          }, {
-            label: 'Performance23',
-            backgroundColor: 'red',
-            borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
-            data: [12,23]
-          }
+          },
         ]
       }
-      const state1 = {
-        labels:labels,
-             datasets: [
-               {
-                 label: 'Performance',
-                 backgroundColor: 'green',
-                 borderColor: 'rgba(0,0,0,1)',
-                 borderWidth: 2,
-                 data: data
-               }
-             ]
-           }
+      
 
     
       return (

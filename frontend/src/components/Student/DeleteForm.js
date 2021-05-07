@@ -13,7 +13,7 @@ const DeleteForm = ({onDelete}) => {
         setsubjectid('')  
     }
     return (
-        <div>
+      <div className='container-fluid p-3 border border-success' style={{width:'80%'}}>
             <h3 className='m-4'>Delete Subject</h3>
             <form className='justify-content-center' onSubmit={onSubmit}>
   <div className="form-row row">

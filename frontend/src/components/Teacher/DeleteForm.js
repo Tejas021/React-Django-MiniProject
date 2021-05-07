@@ -4,12 +4,12 @@ const DeleteForm = ({onDelete}) => {
     const [studentId, setstudentId] = useState([])
     const onSubmit=(e)=>{
        e.preventDefault()
-       setstudentId('')
-       alert("Student "+studentId+" deleted")
+       //setstudentId('')
+      //  alert("Student "+studentId+" deleted")
         onDelete(studentId)
     }
     return (
-        <div>
+      <div className='container-fluid p-3 border border-success' style={{width:'80%'}}>
             <h3 className='m-4'>Delete Student</h3>
             <form className='justify-content-center' onSubmit={onSubmit}>
   <div className="form-row row">
@@ -19,7 +19,8 @@ const DeleteForm = ({onDelete}) => {
     </div>
    
   </div>
-  <button type="submit" className="m-3 btn btn-success">Delete</button>
+  <div className='text-center'><button type="submit" className="m-3 btn btn-success">Delete</button></div>
+  
 </form>
         </div>
     )

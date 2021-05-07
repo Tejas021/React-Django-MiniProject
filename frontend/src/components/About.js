@@ -8,7 +8,7 @@ const About = () => {
   <LogNav about={true}/>
   <div className="container-fluid">
 
-<h1 className="heading my-2" style={{textAlign:'center'}}>About Us</h1> 
+<h1 className="heading my-2" style={{textAlign:'center',color:'green'}}>About Us</h1> 
 
 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-indicators">
@@ -17,13 +17,13 @@ const About = () => {
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div className="carousel-inner">
-    <div className="carousel-item active">
+    <div className="carousel-item active bg-success">
       <img src={img2} style={{height:"500px"}} className="d-block w-100" alt="..."/>
     </div>
-    <div className="carousel-item">
+    <div className="carousel-item bg-success">
       <img src={img2} style={{height:"500px"}}className="d-block w-100" alt="..."/>
     </div>
-    <div className="carousel-item">
+    <div className="carousel-item bg-success">
       <img src={img2} style={{height:"500px"}} className="d-block w-100" alt="..."/>
     </div>
   </div>
@@ -36,27 +36,27 @@ const About = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-<h2 className='my-2 text-center'>Web Application to find out fast and slow learner</h2>
+<h2 className='m-2 text-center ' style={{color:'green'}}>Web Application to find out fast and slow learner</h2>
 
-<h3 className='mt-10'>Team:</h3>
+<h3 className='mt-10' style={{color:'green'}}>Team:</h3>
 
 
 
-<div className='row px-5'>
+<div className='row px-5 ' style={{justifyContent:'center'}}>
     
-    <div className="card col-md-3 mx-5 py-3">
+    <div className="card col-md-3 m-5 py-3 ">
     <img src={profile} className="profimg card-img-top" alt="..."/>
     <div className="card-body">
         <p className="card-text">Name: Akshay Hegde<br/>Roll no: 14<br/>S.E.I.T</p>
     </div>
     </div>
-    <div className="card col-md-3 mx-5 py-3">
+    <div className="card col-md-3 m-5 py-3 " >
     <img src={profile}  className="profimg card-img-top" alt="..."/>
     <div className="card-body">
         <p className="card-text">Name: Tejas Kolwankar<br/>Roll no: 21<br/>S.E.I.T</p>
     </div>
     </div>
-    <div className="card col-md-3 mx-5 py-3">
+    <div className="card col-md-3 m-5 py-3">
     <img src={profile} className="profimg card-img-top" alt="..."/>
     <div className="card-body">
         <p className="card-text">Name: Bhargav Kashya<br/>Roll no: 19<br/>S.E.I.T</p>

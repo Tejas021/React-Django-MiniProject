@@ -27,7 +27,7 @@ setstudent_name('')
 }
 
 return (
-     <div className='container-fluid p-3' >
+  <div className='container-fluid p-3 border border-success' style={{width:'80%'}}>
         <h2 className='m-2 text-center'>New Student</h2>
         <h5 className='' style={{textAlign:'left'}}>Enter the following info:</h5>
          <form className='justify-content-center' onSubmit={onSubmit}>
@@ -58,7 +58,10 @@ return (
     </div>
  
   </div>
+  <div className='text-center'>
   <button type="submit" className="m-3 btn btn-success">Add</button>
+  </div>
+  
 </form>
      </div>
             

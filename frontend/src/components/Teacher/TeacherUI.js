@@ -6,12 +6,14 @@ import AddForm from './AddFormTeach'
 import EditForm from './EditForm'
 import PieChart from './PieChart'
 import DeleteForm from './DeleteForm'
+import Excel from './Excel'
 import LogNav from '../LogNav'
 import {useState,useEffect} from 'react'
 const TeacherUI = () => {
   const [displayForm, setdisplayForm] = useState(false)
   const [updateForm, setupdateForm] = useState(false)
   const [deleteForm, setdeleteForm] = useState(false)
+  const [uploadForm, setuploadForm] = useState(false)
   const [student, setStudent] = useState([])
   const [sortList, setsortList] = useState([])
  
@@ -47,7 +49,8 @@ const TeacherUI = () => {
 
 const addFormThere=()=>{setdisplayForm(!displayForm)}
 const EditFormThere=()=>{setupdateForm(!updateForm)}
-const DeleteFormThere=()=>{console.log("delete");setdeleteForm(!deleteForm)}
+const DeleteFormThere=()=>{setdeleteForm(!deleteForm)}
+const UploadFormThere=()=>{console.log('hello');setuploadForm(!uploadForm);console.log(uploadForm)}
 
 const addStudent=async (newstudent)=>{
   const res= await fetch('http://localhost:8000/api/teachertable/',{
@@ -81,23 +84,54 @@ const updateStudent=()=>{
 
 }
 
+const uploadStudent=async (json1)=>{
+console.log(json1)
+// const res= await fetch('http://localhost:8000/api/teachertable/',{
+//     method:'POST',
+//     headers:{'Content-Type':'application/json'},
+//     body:JSON.stringify(newstudent)
+
+//   })
+const res=await fetch('http://localhost:8000/api/bulk',{
+  method:'POST',
+  headers:{'Content-Type':'application/json'},
+  body:JSON.stringify(json1)
+})
+const responseArray=await res.json();
+
+if(responseArray.resp){
+  console.log("doinf")
+  console.log(responseArray)
+  responseArray.resp.map((element)=>{
+    console.log(element)
+  setStudent([...student,element]);
+  return 1;
+})}
+
+}
+
+
   return (
     <div>
       <LogNav/>
     
       <h1 className="Title mb-4" style={{textAlign:'left'}}>Welcome To StudEval</h1>
 
-      <h3 style={{marginLeft: '20px',textAlign:'left'}}>Your Student Records:</h3>
+      <h3 style={{marginLeft: '20px',textAlign:'left',color:"green"}}>Your Student Records:</h3>
       <br />
 
-      <br />
+     
       {displayForm&&<AddForm onAdd={addStudent}/>}
       {updateForm&&<EditForm onUpdate={updateStudent}/>}
       {deleteForm&&<DeleteForm onDelete={deleteStudent}/>}
-      
+      {uploadForm&&<Excel onUpload={uploadStudent}/>}
+      <br />
 
     
-      <TeacherTable marks={student} renderForm={addFormThere} addForm={displayForm} updateForm={updateForm} EditFormThere={EditFormThere} DeleteFormThere={DeleteFormThere} deleteForm={deleteForm}/>
+      <TeacherTable marks={student} renderForm={addFormThere} addForm={displayForm}
+       updateForm={updateForm} EditFormThere={EditFormThere}
+        DeleteFormThere={DeleteFormThere} deleteForm={deleteForm}
+        UploadFormThere={UploadFormThere} uploadForm={uploadForm}/>
 {/* {console.log(owner)} */}
       <SortedTable sortList={sortList}/>
       <PieChart sortList={sortList}/>

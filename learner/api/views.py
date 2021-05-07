@@ -115,3 +115,52 @@ class TeacherTables(APIView):
         return Response(data1, status=status.HTTP_200_OK)
 
     # def patch(self,request,format=None):
+
+    # def post(self, request, fromat=None):
+    #     for req in request:
+    #         serializer = self.serializer_class(data=req.data)
+    #         if serializer.is_valid():
+    #             student_roll = serializer.data.get('student_roll')
+    #             student_name = serializer.data.get('student_name')
+    #             ia1 = serializer.data.get('ia1')
+    #             ia2 = serializer.data.get('ia2')
+    #             termwork = serializer.data.get('termwork')
+    #             endsem = serializer.data.get('endsem')
+    #             owner1 = serializer.data.get('owner')
+    #         student = TeacherTable(student_name=student_name, student_roll=student_roll,
+    #                                ia1=ia1, ia2=ia2, termwork=termwork, endsem=endsem, owner=owner1)
+    #         print(student)
+    #         student.save()
+    #         # return Response(TeacherTableSerializer(student), status=status.HTTP_200_OK)
+
+
+class TeacherBulk(APIView):
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = TeacherTableSerializer
+
+    def post(self, request, fromat=None):
+        response = []
+        for req in request.data:
+            serializer = self.serializer_class(data=req)
+            if serializer.is_valid():
+                print(serializer.data)
+                response.append(serializer.data)
+                print('valid')
+                student_roll = serializer.data.get('student_roll')
+                student_name = serializer.data.get('student_name')
+                ia1 = serializer.data.get('ia1')
+                ia2 = serializer.data.get('ia2')
+                termwork = serializer.data.get('termwork')
+                endsem = serializer.data.get('endsem')
+                owner1 = serializer.data.get('owner')
+                student = TeacherTable(student_name=student_name, student_roll=student_roll,
+                                       ia1=ia1, ia2=ia2, termwork=termwork, endsem=endsem, owner=owner1)
+                print(student)
+                student.save()
+
+            else:
+                print('INvalid')
+                print(request.data)
+        print(response)
+        return JsonResponse({'resp': response}, status=status.HTTP_200_OK)
+        # if serializer.is_valid():
