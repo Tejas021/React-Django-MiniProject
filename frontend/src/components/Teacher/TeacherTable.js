@@ -7,7 +7,7 @@ const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteF
     let text=addForm?'Close':'New'
     let EditText=updateForm?'Close':'Edit'
     let DeleteText=deleteForm?'Close':'Delete'
-    let UploadText=uploadForm?'Close':'Upload'
+    let UploadText=uploadForm?'Close':'Excel'
     return (
         
         <div>

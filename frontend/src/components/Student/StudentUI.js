@@ -74,9 +74,20 @@ const updateSubject=async (id1,data)=>{
   console.log(upstu)
   window.location.reload();
 }
-const deleteSubject=(subjectId)=>{ fetch('http://localhost:8000/api/studenttable/'+subjectId, { method: 'DELETE' });
-window.location.reload();
-}
+// const deleteSubject=(subjectId)=>{ fetch('http://localhost:8000/api/studenttable/'+subjectId, { method: 'DELETE' });
+// window.location.reload();
+// }
+
+const deleteSubject=(studentId)=>{
+
+    fetch('http://localhost:8000/api/studenttable/'+studentId, { method: 'DELETE' })
+    // window.location.reload();
+   //  const getMarks = async () => {
+   //   const tasksFromServer = await fetchStudents()
+   //   setStudent(tasksFromServer)
+   // }
+     //getMarks()
+   }
 
     return (
         <div>

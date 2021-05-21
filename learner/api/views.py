@@ -53,9 +53,11 @@ class StudentData(APIView):
         med = []
         if(len(sort) > 0):
             for i in sort:
-                if(i.ia1 < 10):
+                sum1 = (i.ia1+i.ia2+i.termwork+i.endsem)
+                percentage = (sum1/145)*100
+                if(percentage < 50):
                     slow.append(i.student_roll)
-                elif(i.ia1 < 15):
+                elif(percentage < 80):
                     med.append(i.student_roll)
                 else:
                     fast.append(i.student_roll)
