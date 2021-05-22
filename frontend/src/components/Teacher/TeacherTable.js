@@ -76,8 +76,9 @@ const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteF
 {/* {console.log()} */}
      {
      marks.map((data) => (
-        // <th style={{color:'white',background:'black'}}>{data.id}</th>
-        
+        // // <th style={{color:'white',background:'black'}}>{data.id}</th>
+        //  ((data.ia1+data.ia2+data.termwork+data.endsem)/145)*100
+          
         <tr key={data.id}>
         <th >{data.id}</th>
         <th >{data.student_roll}</th>
@@ -89,8 +90,8 @@ const TeacherTable = ({marks,renderForm,addForm,updateForm,EditFormThere,deleteF
       <td>25</td>
       <td>{data.endsem}</td>
       <td>80</td>
-      <td>{data.ia1}</td>
-      <td>{data.ia1}</td>
+      <td>{((data.ia1+data.ia2+data.termwork+data.endsem)/145)*100}</td>
+      <td>100</td>
      </tr>
      ))}
          
